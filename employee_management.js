@@ -78,30 +78,40 @@ Bonus: $${this.bonus}`);
 
 //5. Create and Manage Departments and Employees // Output
 
-const stilgar = new Employee("Stilgar", 2000, "Naib", "Freman");
-const duncan = new Employee("Duncan", 3000, "Fedaykin", "Freman");
-const jessica = new Employee("Jessica", 2000, "Priestess", "Freman");
-//Creating multiple instances
+const stilgar = new Employee("Stilgar", 25000, "Naib", "Freman");
+const duncan = new Employee("Duncan", 10000, "Fedaykin", "Freman");
+const jessica = new Employee("Jessica", 20000, "Priestess", "Freman");
+const baron = new Employee("Vladmir", 31000, "Baron", "Harkonnen");
+const rautha = new Employee("Feyd-Rautha", 40000, "Warrior", "Harkonnen");
+const irulan = new Employee("Irulan", 12000, "Priestess", "Harkonnen");
+//Creating multiple instances of employees
 
-stilgar.getDetails();
+baron.getDetails();
 //Applying the method in the Employee Class to show details
 
 const caladan = new Department("Atreides");
+const geidiPrime = new Department("Empire");
 //Creates an instance of a department
-
 
 caladan.addEmployee(duncan);
 caladan.addEmployee(stilgar);
 caladan.addEmployee(jessica);
-caladan.getDepartmentSalary();
-//Uses previous employees instated and adds them to the Atreides department
+geidiPrime.addEmployee(baron);
+geidiPrime.addEmployee(rautha);
+geidiPrime.addEmployee(irulan);
+//Adds employees to both departments
 
-console.log(caladan);
-//Return the department object
-
-const paul = new Manager("Paul", 5000, "Atreides", 1500);
+const shaddam = new Manager("Shaddam", 20000, "Empire", 2000);
+const paul = new Manager("Paul", 60000, "Atreides", 10000);
 paul.getDetails();
 caladan.addEmployee(paul);
+geidiPrime.addEmployee(shaddam);
+//adding Managers
 
+caladan.getDepartmentSalary();
+geidiPrime.getDepartmentSalary();
+//returns the departmentsalary for both departments
 
 caladan.calculateTotalSalaryWithBonus();
+geidiPrime.calculateTotalSalaryWithBonus();
+//total salary including the managers bonuses 
